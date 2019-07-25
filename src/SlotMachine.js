@@ -1,13 +1,22 @@
 import React from 'react';
+import './SlotMachine.css';
 
+const randomNumber = () => {
+    return Math.floor(Math.random() * 3);
+};
 class SlotMachine extends React.Component {
     render() {
-        const randomNumber = Math.floor(Math.random() * 3);
+        
         const slotSigns = ["x" , "y" , "z"];
         return (
             <div>              
-              
-                {slotSigns[randomNumber]}
+            <div className = "Machine-Row">
+                <div>{slotSigns[randomNumber()]}</div> 
+                <div>{slotSigns[randomNumber()]}</div> 
+                <div>{slotSigns[randomNumber()]}</div>
+            </div>
+
+                {this.props.s1}
                 
             </div>
 
